@@ -36,7 +36,9 @@ function check_correct(str) {
     for (let i = 0; i < str.length; ++i) {
         if ((str[i] != "(") && (str[i] != ")")) return INVALID_STRING;
         if (str[i] == "(") stack.push("(");
-        if (str[i] == ")") stack.pop();
+        else 
+            if (stack.pop() == undefined)
+                return "Неправильная";
     }
     if (stack.length == 0)
         return "Правильная";
@@ -60,17 +62,21 @@ let test_obj = {
     
 alert("Далее представлено взаимодействие для тестирования 3 задания лабораторной");
 
-let str_numbers = prompt("Введите список натуральных чисел");
+let str_numbers = prompt("Введите список натуральных чисел для сортировки");
 result = sort_numbers(str_numbers.split(",").map(Number)).join(", ");
 if (result === "-1")
     alert("Представлен список не из натуральных чисел")
+else if (result[0] === "0")
+    alert("Пустой ввод") 
 else
     alert(result)
 
-str_numbers = prompt("Введите список натуральных чисел");
+str_numbers = prompt("Введите список натуральных чисел для получения остатка от деления на 5");
 result = mod_for_numbers(str_numbers.split(",").map(Number)).join(", ");
 if (result === "-1")
     alert("Представлен список не из натуральных чисел")
+else if (result[0] === "0")
+    alert("Пустой ввод") 
 else
     alert(result)
 
