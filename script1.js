@@ -7,7 +7,7 @@ function month_checker(month_number) {
     return month_names[month_number-1];
 }
 
-function checker_simple(num){
+function checker_simple(num) {
     if (num == 2) return true;
     sqrt = Math.sqrt(num);
     for (let i = 2; i < sqrt + 1; ++i) {
@@ -16,12 +16,12 @@ function checker_simple(num){
     return true;
 }
 
-function simple_values(number_values){
-    const INVALID_NUMBER = "Некорректный значение";
+function simple_values(number_values) {
+    const INVALID_NUMBER = "Некорректное значение";
     if (isNaN(Number(number_values))) return INVALID_NUMBER
 
     if (number_values <= 0)
-        return ""
+        return "";
     let i = 2;
     let array = [];
     while(number_values > 0) {
@@ -44,18 +44,20 @@ let Counter = {
     }
 }
 
-function change_separator(str){
+function change_separator(str) {
     let arr = str.split(",");
     return arr.join(".");
 }
 
-function is_palindrom(str){
+function is_palindrom(str) {
     let len = str.length
-    for (let i = 0; i < len/2; ++i)
+    for (let i = 0; i < len / 2; ++i)
         if (str[i] !== str[len - (i+1)])
             return "Нет";
     return "Да";
 }
+
+alert("Далее представлено взаимодействие для тестирования 2 задания лабораторной");
 
 let month_number = prompt("Введите номер месяца");
 alert(month_checker(month_number))
