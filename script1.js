@@ -18,7 +18,7 @@ function checker_simple(num) {
 
 function simple_values(number_values) {
     const INVALID_NUMBER = "Некорректное значение";
-    if (isNaN(Number(number_values))) return INVALID_NUMBER
+    if (isNaN(Number(number_values))) return INVALID_NUMBER;
 
     if (number_values <= 0)
         return "";
@@ -31,7 +31,7 @@ function simple_values(number_values) {
         }
         i++;
     }
-    return array.join(" ");
+    return array.join(", ");
 }
 
 let Counter = {

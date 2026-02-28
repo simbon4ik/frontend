@@ -75,8 +75,6 @@ str_numbers = prompt("Введите список натуральных чис�
 result = mod_for_numbers(str_numbers.split(",").map(Number)).join(", ");
 if (result === "-1")
     alert("Представлен список не из натуральных чисел")
-else if (result[0] === "0")
-    alert("Пустой ввод") 
 else
     alert(result)
 
